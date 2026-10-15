@@ -822,6 +822,35 @@ footer.ft::before{display:none;}
 .ft-k{font-size:.66rem;letter-spacing:1.6px;text-transform:uppercase;color:rgba(232,238,244,.4);}
 .ft-bottom{margin-top:52px !important;}
 @media(max-width:900px){.ft-top{grid-template-columns:1fr !important;gap:36px !important;}}
+
+/* ── CONTACTO destacado ── */
+.contact{padding:140px 48px !important;background:#05080b !important;isolation:isolate;}
+.contact::before{display:none !important;}
+.ct-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.ct-bg .md-wall{inset:-30% -10%;opacity:.55;filter:saturate(1.1);}
+.ct-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 45% 60% at 50% 50%,rgba(5,8,11,.55) 0%,rgba(5,8,11,.92) 70%,#05080b 100%),linear-gradient(to bottom,#05080b 0%,transparent 20%,transparent 80%,#05080b 100%);}
+.contact-card{max-width:760px !important;padding:72px 64px !important;background:rgba(10,16,22,.62) !important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(33,150,212,.35) !important;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.03) inset,0 0 120px rgba(33,150,212,.18);}
+.contact-card .section-title{font-size:clamp(3rem,7vw,5.6rem) !important;line-height:.95;margin-bottom:18px;}
+.ct-sub{color:rgba(232,238,244,.75);font-size:1.05rem;line-height:1.6;margin:0 auto 36px;max-width:460px;}
+.contact-methods{gap:14px !important;margin-bottom:0 !important;}
+.contact-method{padding:15px 26px !important;border-radius:8px !important;font-size:.92rem !important;background:rgba(255,255,255,.04) !important;border:1px solid rgba(255,255,255,.14) !important;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;}
+.contact-method:hover{transform:translateY(-2px);border-color:var(--ag) !important;}
+.contact-method.ct-primary{background:var(--ag) !important;border-color:var(--ag) !important;color:#fff !important;box-shadow:0 12px 34px rgba(33,150,212,.4);}
+.contact-method.ct-primary:hover{box-shadow:0 16px 42px rgba(33,150,212,.55);color:#fff !important;}
+@media(max-width:768px){.contact{padding:70px 16px !important;}.contact-card{padding:40px 22px !important;}.ct-sub{font-size:.92rem;margin-bottom:24px;}}
+/* ── STATS centrados ── */
+.stat-item{align-items:center !important;text-align:center;justify-content:center;padding:56px 24px !important;gap:10px !important;}
+.stat-num{font-size:4.6rem !important;display:inline-flex;align-items:flex-start;justify-content:center;}
+.stat-plus{color:var(--ag) !important;opacity:.6;}
+.stat-label{letter-spacing:3px !important;}
+.stat-desc{color:rgba(232,238,244,.38) !important;font-size:.8rem !important;margin-top:0 !important;}
+.stats{gap:0 !important;background:var(--surface);}
+.stat-item + .stat-item::before{content:'';position:absolute;left:0;top:28%;bottom:28%;width:1px;background:linear-gradient(to bottom,transparent,rgba(33,150,212,.4),transparent);}
+@media(max-width:768px){.stat-item{padding:26px 6px !important;gap:5px !important;}.stat-num{font-size:2.2rem !important;}.stat-desc{display:none;}}
+.stat-num{position:relative;}
+.stat-plus{position:absolute;left:100%;top:0;padding-left:2px;}
+.ct-sub{max-width:none !important;white-space:nowrap;}
+@media(max-width:768px){.ct-sub{white-space:normal;}}
 </style></style></style></style>
 </head>
 <body>
@@ -1187,9 +1216,11 @@ footer.ft::before{display:none;}
 </section>
 
 <section class="contact" id="contacto">
+  <div class="ct-bg" aria-hidden="true"></div>
   <div class="contact-card">
     <div class="section-label" style="text-align:center" data-i18n="contact_label">Contacto</div>
     <h2 class="section-title" data-i18n="contact_title">¿JUGAMOS JUNTOS?</h2>
+    <p class="ct-sub" data-i18n="ct_sub">Contanos tu idea y armamos el contenido que tu carrera merece.</p>
     
     <div class="contact-methods">
       <a href="https://www.instagram.com/gambetamedia/" target="_blank" class="contact-method">
@@ -1200,7 +1231,7 @@ footer.ft::before{display:none;}
         </svg>
         @gambetamedia
       </a>
-      <a href="https://wa.me/5491170336901" target="_blank" rel="noopener" class="contact-method">
+      <a href="https://wa.me/5491170336901" target="_blank" rel="noopener" class="contact-method ct-primary">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5z" stroke="white" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
           <path d="M8.6 7.6c.2-.4.5-.4.7-.4h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2.1.4 0 .6l-.5.7c-.1.2-.1.3 0 .5.6 1.1 1.5 2 2.6 2.6.2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.3.3.3.5 0 .6-.3 1.4-1.1 1.8-.7.4-1.6.4-3.2-.3-1.9-.8-3.6-2.6-4.4-4.4-.6-1.4-.4-2.6.2-3.3z" fill="white"/>
@@ -1267,7 +1298,7 @@ const i18n = {
     v2_title:'Estrategia personalizada',v2_desc:'Cada jugador es único. Su comunicación también lo es.',
     v3_title:'Crecimiento real y medible',v3_desc:'Seguidores, engagement y alcance que escalan con tu carrera.',
     v4_title:'Presencia 24/7',v4_desc:'Siempre activos. Antes, durante y después del partido.',
-    contact_label:'Contacto',contact_title:'¿JUGAMOS JUNTOS?',
+    contact_label:'Contacto',contact_title:'¿JUGAMOS JUNTOS?',ct_sub:'Contanos tu idea y armamos el contenido que tu carrera merece.',
     contact_sub:'',
     contact_cta:'Escribinos por Instagram →',
     footer_copy:'© 2026 Gambeta Media. Todos los derechos reservados.',brands_label:'Marcas que confiaron en nosotros',videos_label:'Contenido en movimiento',videos_title:'MOMENTOS PARA EL RECUERDO.'
@@ -1333,7 +1364,7 @@ const i18n = {
     v2_title:'Estratégia personalizada',v2_desc:'Cada jogador é único. Sua comunicação também deve ser.',
     v3_title:'Crescimento real e mensurável',v3_desc:'Seguidores, engajamento e alcance que crescem com sua carreira.',
     v4_title:'Presença 24/7',v4_desc:'Sempre ativos. Antes, durante e depois da partida.',
-    contact_label:'Contato',contact_title:'JOGAMOS JUNTOS?',
+    contact_label:'Contato',contact_title:'JOGAMOS JUNTOS?',ct_sub:'Tell us your idea and we’ll create the content your career deserves.',
     contact_sub:'Fale sobre você, seu clube e seus objetivos. Respondemos rápido e criamos algo sob medida.',
     contact_cta:'Escreva para nós no Instagram →',
     footer_copy:'© 2026 Gambeta Media. Todos os direitos reservados.',brands_label:'Marcas que confiaram em nós',videos_label:'Conteúdo em movimento',videos_title:'MOMENTOS PARA LEMBRAR.'
@@ -1558,6 +1589,9 @@ function openClip(src, poster){
   window.addEventListener('popstate',()=>{ if(document.getElementById('vmodal').classList.contains('open')) _close(); });
 })();
 
+
+// fondo del contacto: reutiliza el muro de matchdays de la portada
+(function(){ const w=document.querySelector('.md-wall'), bg=document.querySelector('.ct-bg'); if(w&&bg) bg.appendChild(w.cloneNode(true)); })();
 // LIGHTBOX
 function openLightbox(el) { openLightboxSrc(el.querySelector('img').src); }
 function openLightboxSrc(src) { document.getElementById('lightboxImg').src=src; document.getElementById('lightbox').classList.add('open'); document.body.style.overflow='hidden'; }
